@@ -8,6 +8,9 @@
  * - Subtraction: -
  * - Multiplication: *
  * - Division: /
+ * - Modulo: %
+ * - Exponentiation: ^
+ * - Square Root: sqrt()
  */
 
 const readline = require('readline');
@@ -29,6 +32,27 @@ const calculator = {
       throw new Error('Error: Cannot divide by zero');
     }
     return a / b;
+  },
+
+  // Modulo operation: returns the remainder of a divided by b
+  modulo: (a, b) => {
+    if (b === 0) {
+      throw new Error('Error: Cannot calculate modulo with zero divisor');
+    }
+    return a % b;
+  },
+
+  // Power operation: returns base raised to the exponent
+  power: (base, exponent) => {
+    return Math.pow(base, exponent);
+  },
+
+  // Square root operation: returns the square root of n with error handling for negative numbers
+  squareRoot: (n) => {
+    if (n < 0) {
+      throw new Error('Error: Cannot calculate square root of negative number');
+    }
+    return Math.sqrt(n);
   }
 };
 
